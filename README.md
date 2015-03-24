@@ -5,7 +5,8 @@ MockObject
 [![Quality Score](https://img.shields.io/scrutinizer/g/kumuwai/mock-object.svg)](https://scrutinizer-ci.com/g/kumuwai/mock-object)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 
-This provides a mock object that can be used as a test helper
+
+This provides a mock object that can be used as a test helper.
 
 
 Usage
@@ -13,7 +14,26 @@ Usage
 
 Create a new MockObject using MockObject::mock. 
 
-$mock = MockObject::mock('Class\To\Mock', ['foo','bar']);
+    mock($interface, array $expectations=array(), array $requirements=array())
+
+    $interface: The class or interface to mock (required)
+    $expectations: Methods and variables that are available to this object
+    $requirements: Methods that must be run (or an error will be thrown during Mockery::close())
+
+```php
+$mock = MockObject::mock('Class\To\Mock', ['foo','bar'=>'buzz']);
+$mock->foo;        // returns $mock
+$mock->foo();      // $mock
+$mock->foo->bar;   // 'buzz'
+$mock->bar;        // 'buzz'
+$mock->bar();      // 'buzz'
+```
+
+The mock objects returned are simple Mockery objects with some pre-set expectations. You can use any standard Mockery methods on them:
+
+```php
+$mock->shouldReceive('fizz')->once()->with('buzz')->andReturn('something else');
+```
 
 
 Installation
@@ -29,5 +49,4 @@ This is not yet available as a package on packagist, so if you'd like to install
             "url":  "https://github.com/kumuwai/mock-object.git"
         }
     ],
-
 
