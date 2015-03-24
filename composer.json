@@ -1,0 +1,25 @@
+{
+    "name": "kumuwai/mock-object",
+    "description": "Simple test mock",
+    "homepage": "https://github.com/kumuwai/mock-object",
+    "keywords": [ "test", "mock", "mockery" ],
+    "authors": [
+        {
+            "name": "Joel",
+            "email": "joel@kumuwai.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9.3",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kumuwai\\MockObject\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
