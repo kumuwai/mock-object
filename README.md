@@ -35,12 +35,18 @@ The mock objects returned are simple Mockery objects with some pre-set expectati
 $mock->shouldReceive('fizz')->once()->with('buzz')->andReturn('something else');
 ```
 
+You can also run the close processes directly from MockObject:
+
+```php
+MockObject::close();
+```
+
 
 Installation
 --------------
 This is not yet available as a package on packagist, so if you'd like to install it via composer, you'll need to use a vcs repository. Add this to your composer.json file:
 
-    "require": {
+    "require-dev": {
         "kumuwai/mock-object": "dev-master"
     },
     "repositories": [

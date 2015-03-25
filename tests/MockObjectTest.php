@@ -1,6 +1,6 @@
-<?php 
+<?php namespace Kumuwai\MockObject;
 
-use Kumuwai\MockObject\MockObject;
+use PHPUnit_Framework_TestCase;
 
 
 class MockObjectTest extends PHPUnit_Framework_TestCase
@@ -9,7 +9,7 @@ class MockObjectTest extends PHPUnit_Framework_TestCase
 
     public function tearDown()
     {
-        Mockery::close();
+        MockObject::close();
     }
 
     public function testExists()
@@ -52,7 +52,7 @@ class MockObjectTest extends PHPUnit_Framework_TestCase
     public function testMockeryWillThrowExceptionIfRequiredItemsNotCalled()
     {
         $test = MockObject::mock(self::CLASS_TO_MOCK, [], ['foo','bar'=>'buzz']);
-        Mockery::close();
+        MockObject::close();
     }
 
     public function testMockeryWillNotThrowExceptionIfRequiredItemIsCalled()
@@ -61,7 +61,7 @@ class MockObjectTest extends PHPUnit_Framework_TestCase
         
         $this->assertEquals('buzz', $test->bar());
 
-        Mockery::close();
+        MockObject::close();
     }
 
 }

@@ -45,4 +45,8 @@ class MockObject
         return $mock;
     }
 
+    public static function close()
+    {
+        Mockery::close();
+    }
 }
