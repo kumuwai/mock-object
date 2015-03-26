@@ -56,3 +56,6 @@ This is not yet available as a package on packagist, so if you'd like to install
         }
     ],
 
+API Documentation
+-----------------
+API documentation is available at [http://kumuwai.github.io/mock-object/api/](http://kumuwai.github.io/mock-object/api/)
