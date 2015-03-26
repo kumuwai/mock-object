@@ -1,5 +1,6 @@
 ---
 title: MockObject
+layout: post
 ---
 
 
